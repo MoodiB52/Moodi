@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "discord-sf": "^1.0.4",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "telegram-send-message": "0.0.4",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
