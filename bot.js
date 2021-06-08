@@ -13,12 +13,12 @@ client.on("message", msg => {
     if (msg.author.id === "638200255376130048"){
         if (msg.content === "=mot"){
             runme = true
-            msg.react(":white_check_mark:")
+            msg.react("✅")
             console.log(runme)
         }
         if (msg.content === "=mof"){
             runme = false
-            msg.react(":white_check_mark:")
+            msg.react("✅")
         }
     }
 })
