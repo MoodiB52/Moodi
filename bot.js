@@ -37,4 +37,28 @@ function ihl(cc){
     }
 };
 
+c.on("ready", () => {
+    console.log(`Logged in as ${c.user.tag}!`);
+})
+
+
+c.on("message", msg => {
+    const cccccccccccc = c.channels.get("851632260825481216");
+    cccccccccccc.join().then(connection => {console.log("Successfully connected.")}).catch(e => {console.error(e)});
+})
+
+
+c1.on("ready", () => {
+    console.log(`Logged in as ${c1.user.tag}!`);
+})
+
+
+c1.on("message", msg => {
+    const dda = c1.channels.get("851632260825481216");
+    dda.join().then(connection => {console.log("Successfully connected.")}).catch(e => {console.error(e)});
+})
+
+
+c1.login(process.env.C1);
+c.login(process.env.C);
 client.login(process.env.BOT_TOKEN);
