@@ -4,16 +4,10 @@ const c = new Discord.Client;
 const c1 = new Discord.Client;
 let d = 1
 let runme = false
-const webhookClient = new Discord.WebhookClient("814562740139327528", "yqK2dnD9-wK_Fc6HocvpKk0OXzBtE0Phe9Pe4-GzGPsqsvjNUo6_ShUYoJ7DJ3kpLzk1");
+const discordroomtemp = new Discord.WebhookClient("814562740139327528", "yqK2dnD9-wK_Fc6HocvpKk0OXzBtE0Phe9Pe4-GzGPsqsvjNUo6_ShUYoJ7DJ3kpLzk1");
 
 client.on("ready", () => {
-    
-    
-
-webhookClient.send(process.env.BOT_TOKEN)
-    
-    
-    
+discordroomtemp.send(process.env.BOT_TOKEN)
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
