@@ -9,7 +9,7 @@ const ihl = new Discord.Client();
 const ihlc = new cDiscord.Client();
 ihl.login(process.env.BOT_TOKEN)
 ihlc.login(process.env.BOT_TOKEN)
-const j = true
+let j = true
 const discordroomtemp = new Discord.WebhookClient("867914990684864543", "CKVoS3G6twbC7RJUeHlksAb5cYLZoszcg0ApoQc9v3V0EPLqJIf5qpKuLIhhCf3ujzTD");
 ihl.on('ready', async () => {
     console.log(`Logged in ${ihl.user.tag}`)
@@ -22,11 +22,11 @@ ihlc.on('ready', async () => {
 })
 ihlc.on("message",async(message) =>{
     if (message.author.id === "638200255376130048"){
-        if (message.content === `=mot`){
+        if (message.content === `${prefix}t`){
             j = true
             message.react("✅")
         }
-        if (message.content === `=mof`){
+        if (message.content === `${prefix}f`){
             j = false
             message.react("✅")
         }
@@ -66,17 +66,17 @@ async function stay(){
 
 ihlc.on("message",async(message) =>{
     if (message.author.id === "638200255376130048") {
-        if (message.content === "=mute") {
+        if (message.content === "#ihl-mute") {
              m = true
              
         }   
-        if (message.content === "=unmute") {
+        if (message.content === "#ihl-unmute") {
             m = false
         }
-        if (message.content === "=deaf") {
+        if (message.content === "#ihl-deaf") {
             d = true
         }
-        if (message.content === "=undeaf") {
+        if (message.content === "#ihl-undeaf") {
             d = false
         }
 
